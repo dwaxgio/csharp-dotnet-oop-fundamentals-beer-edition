@@ -26,8 +26,15 @@ namespace OOPBearEdition
             Console.WriteLine(sale.Total);
         }
 
+        // 5. Interface (contracts)
+        interface ISale
+        {
+            string Total { get; }
+            void Add(decimal amount);
+        }
+
         // 3. Class
-        class Sale
+        class Sale : ISale
         {
             private decimal _total = 0;
             public string Total => _total.ToString("C");
@@ -36,5 +43,7 @@ namespace OOPBearEdition
                 _total += amount;
             }
         }
+
+        
     }
 }
