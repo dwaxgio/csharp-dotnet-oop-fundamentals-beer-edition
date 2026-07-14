@@ -1,0 +1,29 @@
+## Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build Folders
+bin/
+obj/
+
+## NuGet
+*.nupkg
+packages/
+
+## Rider and JetBrains
+_ReSharper*/
+*.DotSettings.user
+
+## VS Code
+.vscode/
+
+## Logs
+*.log
+
+## Others
+*.cache
+.DS_Store
+Thumbs.db
