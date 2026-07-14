@@ -17,7 +17,13 @@ namespace OOPBearEdition
             {
                 return a + b;
             }
-            Console.WriteLine(result);           
+            Console.WriteLine(result);
+
+            // 4. Object
+            var sale = new Sale();
+            sale.Add(10);
+            sale.Add(20);
+            Console.WriteLine(sale.Total);
         }
 
         // 3. Class
