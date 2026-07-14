@@ -44,6 +44,19 @@ namespace OOPBearEdition
             }
         }
 
-        
+        // 6. Constructor and Abstraction
+        class SenderSale
+        {
+            private ISale _sale;
+            public SenderSale(ISale sale)
+            {
+                _sale = sale;
+            }
+
+            public void SendMail()
+            {
+                Console.WriteLine($"Enviando correo con la venta que tiene total {_sale.Total}");
+            }
+        }
     }
 }
