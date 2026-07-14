@@ -24,6 +24,13 @@ namespace OOPBearEdition
             sale.Add(10);
             sale.Add(20);
             Console.WriteLine(sale.Total);
+
+            // 7.2 Polymorphism
+            var saleWithTax = new SaleWithTax(0.16m);
+            saleWithTax.Add(15);
+            saleWithTax.Add(25);
+            var senderSale = new SenderSale(sale); // OR var senderSale = new SenderSale(saleWithTax);
+            senderSale.SendMail();
         }
 
         // 5. Interface (contracts)
@@ -41,6 +48,28 @@ namespace OOPBearEdition
             public void Add(decimal amount)
             {
                 _total += amount;
+            }
+        }
+
+        // 7. Polymorphism
+        class SaleWithTax : ISale
+        {
+            private decimal _total = 0;
+            private decimal _subtotal = 0;
+            private decimal _taxRate;
+            private decimal _taxAmount;
+
+            public SaleWithTax(decimal taxRate)
+            {
+                _taxRate = taxRate;
+            }
+
+            public string Total => (_subtotal + _taxAmount).ToString("C");
+
+            public void Add(decimal amount)
+            {
+                _subtotal += amount;
+                _taxAmount = _subtotal * _taxRate;
             }
         }
 
