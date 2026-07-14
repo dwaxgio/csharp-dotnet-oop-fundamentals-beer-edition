@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace OOPBearEdition
 {
@@ -16,7 +17,18 @@ namespace OOPBearEdition
             {
                 return a + b;
             }
-            Console.WriteLine(result);
+            Console.WriteLine(result);           
+        }
+
+        // 3. Class
+        class Sale
+        {
+            private decimal _total = 0;
+            public string Total => _total.ToString("C");
+            public void Add(decimal amount)
+            {
+                _total += amount;
+            }
         }
     }
 }
